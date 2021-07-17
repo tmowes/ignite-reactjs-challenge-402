@@ -7,22 +7,15 @@ import {
   SkeletonText,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-
-interface Card {
-  title: string;
-  description: string;
-  url: string;
-  ts: number;
-}
+import type { CardData } from './CardList';
 
 interface CardProps {
-  data: Card;
+  data: Omit<CardData, 'id'>;
   viewImage: (url: string) => void;
 }
 
 export function Card({ data, viewImage }: CardProps): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
-
   return (
     <Box key={data.ts} borderRadius="md" bgColor="pGray.800">
       <Skeleton isLoaded={!isLoading}>

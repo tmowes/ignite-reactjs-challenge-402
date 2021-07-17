@@ -9,7 +9,7 @@ import {
 
 import { FormAddImage } from '../Form/FormAddImage';
 
-interface ModalAddImageProps {
+export interface ModalAddImageProps {
   isOpen: boolean;
   onClose: () => void;
 }
